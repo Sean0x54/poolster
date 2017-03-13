@@ -1,0 +1,7 @@
+<h2>Create a pool</h2>
+<%= simple_form_for @pool do |f| %>
+  <%= f.input :owner_id, as: :hidden %>
+  <%= f.input :name %>
+  <%= f.input :is_public, as: :boolean %>
+  <%= f.button :submit %>
+<% end %>

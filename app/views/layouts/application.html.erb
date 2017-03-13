@@ -29,9 +29,12 @@
           </li>
         </ul>
       </nav>
+      <div class="flex-column">
+        <%= yield %>
+      </div>
       <% else %>
       <div class="container-fluid flex-column p-0 d-flex wrapper">
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <nav class="navbar navbar-toggleable-md navbar-light">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,8 +49,8 @@
             </ul>
           </div>
         </nav>
+        <%= yield %>
       <% end %>
-      <%= yield %>
     </div>
   </body>
 </html>
