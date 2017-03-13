@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PoolDuels</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+      <% if user_signed_in? %>
+      <div class="container-fluid d-flex flex-row p-0 wrapper">
+        <nav class="col-2 bg-faded d-flex flex-column">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <%= link_to 'Pools', '#', :class => 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Rankings", '#', :class => 'nav-link' %>
+            </li>
+          </ul>
+        <ul class="nav flex-column mt-auto">
+          <li class="nav-item">
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
+          </li>
+        </ul>
+      </nav>
+      <% else %>
+      <div class="container-fluid flex-column p-0 d-flex wrapper">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="<%= root_path %>">
+              <%= "Poolster" %>
+            </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <%= link_to 'Sign in', new_user_session_path, :class => 'nav-link' %>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
