@@ -1,8 +1,7 @@
-<button class="btn btn-lg btn-default">
-<%= link_to "Create Entry", "pool_entries_path(pool_id: @pool.id)" %>
-</button>
+
+<%= link_to "Join pool", 'pool_entries_path', pool_id: @pool.id, class: "btn btn-primary" %>
 <h1><%= @pool.name %></h1>
 
 <% @users.each do |user| %>
-<h3><%= user.email %></h3>
+<h4><%= user.email %></h4>
 <% end %>

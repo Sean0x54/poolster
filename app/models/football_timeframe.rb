@@ -1,0 +1,2 @@
+class FootballTimeframe < ApplicationRecord
+end

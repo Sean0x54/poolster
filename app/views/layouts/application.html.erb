@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PoolDuels</title>
+    <title>Poolster</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
   <body>
       <% if user_signed_in? %>
       <div class="container-fluid d-flex flex-row p-0 wrapper">
-        <nav class="col-2 bg-faded d-flex flex-column">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down sidebar bg-faded d-flex flex-column">
           <ul class="nav flex-column">
             <li class="nav-item">
               <%= link_to 'Pools', '#', :class => 'nav-link' %>
@@ -29,7 +29,7 @@
           </li>
         </ul>
       </nav>
-      <div class="flex-column">
+      <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 ">
         <%= yield %>
       </div>
       <% else %>

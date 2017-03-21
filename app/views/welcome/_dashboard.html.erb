@@ -1,33 +1,18 @@
 <div class="flex-row p-3">
-
-<div class="card-deck">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Week 1</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Week 2</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Week 3</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
+<div class="pools">
+  <h2>My Pools</h2>
+  <% @pools.each do |pool| %>
+    <%= pool.name %>
+  <% end %>
 </div>
+<div class="list-group">
+  <% @teams.each do |team| %>
+  <div class="list-group-item">
+    <%= team.full_name %>, <%= team.conference %> <%= team.division %>
+  </div>
+  <% end %>
+</div>
+
+
 
 </div>
