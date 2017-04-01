@@ -52,7 +52,7 @@ namespace :fantasy_data do
 
       desc "sync time frames from Fantasy Data"
       task :timeframes  => :environment do
-        Rake::Task["utils:set_logger"].execute
+        # Rake::Task["utils:set_logger"].execute
         current_season = 2016 #FantasyData::Football.current_season.to_i
         FantasyData::Football.recent_time_frames.each do |timeframe|
           next unless timeframe.Season.eql?(current_season)

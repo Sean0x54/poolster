@@ -1,7 +1,8 @@
-
-<%= link_to "Join pool", 'pool_entries_path', pool_id: @pool.id, class: "btn btn-primary" %>
+<% unless @pool.members.exists?(current_user.id) %>
+<%= link_to "Join pool", join_pool_path(@pool.id), class: "btn btn-primary" %>
+<% end %>
 <h1><%= @pool.name %></h1>
 
-<% @users.each do |user| %>
+<% @pool.members.each do |user| %>
 <h4><%= user.email %></h4>
 <% end %>

@@ -1293,27 +1293,27 @@ class FantasyData::Football < FantasyData::Base
     create_or_update_game schedule
   end
 
-  # def self.create_or_update_timeframe timeframe
-  #   s = ::Football::Timeframe.find_or_initialize_by( api_season: timeframe.ApiSeason, api_week: timeframe.ApiWeek )
-  #   s.season_type                    = timeframe.SeasonType
-  #   s.season                         = timeframe.Season
-  #   s.week                           = timeframe.Week
-  #   s.name                           = timeframe.Name
-  #   s.short_name                     = timeframe.ShortName
-  #   s.start_date                     = timeframe.StartDate
-  #   s.end_date                       = timeframe.EndDate
-  #   s.first_game_start               = timeframe.FirstGameStart
-  #   s.first_game_end                 = timeframe.FirstGameEnd
-  #   s.last_game_end                  = timeframe.LastGameEnd
-  #   s.has_games                      = timeframe.HasGames.eql?(true)
-  #   s.has_started                    = timeframe.HasStarted.eql?(true)
-  #   s.has_ended                      = timeframe.HasEnded.eql?(true)
-  #   s.has_first_game_started         = timeframe.HasFirstGameStarted.eql?(true)
-  #   s.has_first_game_ended           = timeframe.HasFirstGameEnded.eql?(true)
-  #   s.has_last_game_ended            = timeframe.HasLastGameEnded.eql?(true)
-  #
-  #   s.save
-  # end
+  def self.create_or_update_timeframe timeframe
+    s = ::Football::Timeframe.find_or_initialize_by( api_season: timeframe.ApiSeason, api_week: timeframe.ApiWeek )
+    s.season_type                    = timeframe.SeasonType
+    s.season                         = timeframe.Season
+    s.week                           = timeframe.Week
+    s.name                           = timeframe.Name
+    s.short_name                     = timeframe.ShortName
+    s.start_date                     = timeframe.StartDate
+    s.end_date                       = timeframe.EndDate
+    s.first_game_start               = timeframe.FirstGameStart
+    s.first_game_end                 = timeframe.FirstGameEnd
+    s.last_game_end                  = timeframe.LastGameEnd
+    s.has_games                      = timeframe.HasGames.eql?(true)
+    s.has_started                    = timeframe.HasStarted.eql?(true)
+    s.has_ended                      = timeframe.HasEnded.eql?(true)
+    s.has_first_game_started         = timeframe.HasFirstGameStarted.eql?(true)
+    s.has_first_game_ended           = timeframe.HasFirstGameEnded.eql?(true)
+    s.has_last_game_ended            = timeframe.HasLastGameEnded.eql?(true)
+
+    s.save
+  end
 
   def self.update_todays_box_scores
     season  = current_season

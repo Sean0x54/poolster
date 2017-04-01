@@ -10,4 +10,9 @@ class Pool < ApplicationRecord
   def create_owner_pool_membership
     self.pool_memberships.create!(user_id: self.owner_id)
   end
+
+  def create_user_pool_membership
+    self.user.pool_memberships.create!(user_id: self.user.id)
+  end
+
 end

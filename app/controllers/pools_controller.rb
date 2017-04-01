@@ -17,6 +17,17 @@ class PoolsController < ApplicationController
     @users = @pool.members
   end
 
+  def join
+    pool = Pool.find(params[:id])
+    pool.pool_memberships.build(user_id: current_user.id)
+    if pool.save
+      render 'show'
+    else
+      flash[:error] = "Oops"
+      render 'show'
+    end
+  end
+
 
   private
 
