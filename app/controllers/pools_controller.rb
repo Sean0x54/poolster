@@ -28,7 +28,6 @@ class PoolsController < ApplicationController
     end
   end
 
-
   private
 
   def pool_params

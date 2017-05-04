@@ -4,5 +4,7 @@
 <h1><%= @pool.name %></h1>
 
 <% @pool.members.each do |user| %>
-<h4><%= user.email %></h4>
+  <p>
+    <%= user.email %> <%= link_to 'Create Entry' , '#' %>
+  </p>
 <% end %>
