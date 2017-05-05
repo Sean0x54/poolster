@@ -20,6 +20,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rails-assets-tether'
 gem 'flexirest'
 gem 'simple_form'
+gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
