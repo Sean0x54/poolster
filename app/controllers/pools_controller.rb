@@ -1,4 +1,9 @@
 class PoolsController < ApplicationController
+
+  def index
+    @pools = Pool.all.reject {|p| !p.is_public }
+  end
+
   def new
     @pool = Pool.new(owner_id: current_user.id)
   end
@@ -12,6 +17,7 @@ class PoolsController < ApplicationController
       redirect_to :new
     end
   end
+
   def show
     @pool = Pool.find(params[:id])
     @users = @pool.members

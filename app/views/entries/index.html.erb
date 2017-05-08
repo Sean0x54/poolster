@@ -1,0 +1,12 @@
+<% @week.each do |game| %>
+  <p>
+    <%= game.home_team %>
+    <%= game.away_team %>
+    @<%= game.date_time.strftime("%l:%M %P") %>
+  </p>
+<% end %>
+<% @entries.each do |entry| %>
+  <p>
+    <%= entry.inspect %>
+  </p>
+<% end %>

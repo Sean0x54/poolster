@@ -1,0 +1,12 @@
+
+development:
+  SECRET_KEY_BASE:
+  FANTASY_DATA_SUBSCRIPTION_KEY:
+  FANTASY_DATA_NFL_SITE:
+
+test:
+  SECRET_KEY_BASE:
+  FANTASY_DATA_SUBSCRIPTION_KEY:
+  FANTASY_DATA_NFL_SITE:
+
+#production data is stored on production server.

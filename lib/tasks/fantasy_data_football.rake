@@ -50,7 +50,7 @@ namespace :fantasy_data do
       desc "sync time frames from Fantasy Data"
       task :timeframes  => :environment do
         #
-        current_season = 2016 #FantasyData::Football.current_season.to_i
+        current_season = FantasyData::Football.current_season.to_i
         FantasyData::Football.recent_time_frames.each do |timeframe|
           next unless timeframe.Season.eql?(current_season)
           FantasyData::Football.create_or_update_timeframe timeframe
