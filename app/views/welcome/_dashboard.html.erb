@@ -1,16 +1,16 @@
 <div class="flex-row p-3">
 <div class="pools">
   <h2>My Pools</h2>
-  <% @pools.each do |pool| %>
+  <% current_user.pools.each do |pool| %>
     <p>
-      <%= pool.name %>
+        <%= link_to pool.name, pool %>
     </p>
   <% end %>
 </div>
 <div class="list-group">
   <% @teams.each do |team| %>
   <div class="list-group-item">
-    <%= team.full_name %>, <%= team.conference %> <%= team.division %>
+    <%= "#{team.full_name}, #{team.conference} - #{team.division}" %>
   </div>
   <% end %>
 </div>

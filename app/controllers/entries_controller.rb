@@ -1,8 +1,8 @@
 class EntriesController < ApplicationController
 def index
   current_time = Time.now
-  @week = Football::Game.where(week: 1)
-  @week.each_with_index do |game, index|
+  week = Football::Timeframe.where("start_date > ? and season_type = ?", current_time, 1).take
+  week.each_with_index do |game, index|
 
     # if entry.new_record? # Doesn't work yet
     #   entry.confidence_order = index

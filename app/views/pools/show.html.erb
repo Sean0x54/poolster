@@ -5,6 +5,6 @@
 
 <% @pool.members.each do |user| %>
   <p>
-    <%= user.email %> <%= link_to 'Create Entry' , '#' %>
+    <%= user.email %> <%= link_to 'Create Entry' , pool_entries_path(@pool) if (user == current_user) %>
   </p>
 <% end %>
