@@ -84,7 +84,7 @@ namespace :fantasy_data do
         counter = 0
         errors = []
 
-        %w(REG POST).each do | season_suffix |
+        %w(PRE REG POST).each do | season_suffix |
           FantasyData::Football.schedules(season: args.season.to_s + season_suffix).each do |schedule|
             begin
               FantasyData::Football.create_or_update_schedule schedule

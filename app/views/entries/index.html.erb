@@ -1,12 +1,9 @@
-<% @week.each do |game| %>
-  <p>
-    <%= game.home_team %>
-    <%= game.away_team %>
-    @<%= game.date_time.strftime("%l:%M %P") %>
-  </p>
-<% end %>
 <% @entries.each do |entry| %>
-  <p>
-    <%= entry.inspect %>
-  </p>
+  <% game = @games.find_by(id: entry.game_id) %>
+  <%= form_for pool_entry_path(id: params[:pool_id], entry_id: entry.id), method: :post do |f|%>
+    <%= f.label game.home_team %>
+    <%= f.radio_button game, "yes" %>
+    <%= f.label game.away_team %>
+    <%= f.radio_button game, "yes" %>
+  <% end %>
 <% end %>
